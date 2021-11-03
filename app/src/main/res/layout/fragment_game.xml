@@ -1,0 +1,254 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/fragment2_background">
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btnStartGame"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/button_background"
+        android:text="@string/startGame"
+        android:textColor="@color/tanAccent"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toStartOf="@+id/tvGameTime"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/tcTime"
+        app:layout_constraintTop_toTopOf="@+id/tcTime" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btnStopGame"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:background="@drawable/button_background"
+        android:text="@string/endGame"
+        android:textColor="@color/tanAccent"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <ScrollView
+        android:id="@+id/svHome"
+        android:layout_width="172dp"
+        android:layout_height="0dp"
+        android:layout_marginBottom="8dp"
+        android:layout_marginTop="8dp"
+        android:background="@drawable/score_background"
+        android:scrollbars="none"
+        app:layout_constraintBottom_toTopOf="@+id/btnStopGame"
+        app:layout_constraintEnd_toStartOf="@+id/svAway"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/clAway">
+
+        <TableLayout
+            android:id="@+id/tlHome"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:isScrollContainer="true" />
+
+    </ScrollView>
+
+    <ScrollView
+        android:id="@+id/svAway"
+        android:layout_width="172dp"
+        android:layout_height="0dp"
+        android:layout_marginBottom="8dp"
+        android:layout_marginTop="8dp"
+        android:background="@drawable/score_background"
+        android:scrollbars="none"
+        app:layout_constraintBottom_toTopOf="@+id/btnStopGame"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/svHome"
+        app:layout_constraintTop_toBottomOf="@+id/clAway">
+
+        <TableLayout
+            android:id="@+id/tlAway"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:isScrollContainer="true" />
+
+    </ScrollView>
+
+    <TextView
+        android:id="@+id/gamelog_hometeam"
+        android:layout_width="195dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:text="Kotijoukkue"
+        android:textColor="#F44336"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnStartGame" />
+
+    <TextClock
+        android:id="@+id/tcTime"
+        android:layout_width="129dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:ems="4"
+        android:textColor="#FFFFFF"
+        android:textSize="24sp"
+        app:layout_constraintEnd_toStartOf="@+id/btnStartGame"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tvGameTime"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:ems="4"
+        android:text="0:00:00"
+        android:textAlignment="textEnd"
+        android:textColor="#CDDC39"
+        android:textSize="24sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/btnStartGame"
+        app:layout_constraintTop_toTopOf="@+id/btnStartGame" />
+
+    <TextView
+        android:id="@+id/tvAwayteam"
+        android:layout_width="195dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:text="Vierasjoukkue"
+        android:textColor="#F44336"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/clHome" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/clHome"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/gamelog_hometeam">
+
+        <TextView
+            android:id="@+id/tvHomeScore"
+            android:layout_width="70dp"
+            android:layout_height="0dp"
+            android:layout_marginStart="8dp"
+            android:background="@drawable/score_background"
+            android:text="0"
+            android:textAlignment="center"
+            android:textColor="@color/greenAccent"
+            android:textSize="24sp"
+            app:layout_constraintBottom_toBottomOf="@+id/btnHomeDecGoal"
+            app:layout_constraintStart_toEndOf="@+id/btnHomeDecGoal"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btnHomeIncGoal"
+            android:layout_width="70dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:background="@drawable/green_button_background"
+            android:text="@string/goalPlus"
+            android:textColor="@color/tanAccent"
+            android:textSize="24sp"
+            app:layout_constraintStart_toEndOf="@+id/tvHomeScore"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btnHomeAddGoal"
+            android:layout_width="70dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:background="@drawable/addgoal_button_background"
+            android:text="@string/goalAdd"
+            android:textColor="@color/tanAccent"
+            android:textSize="24sp"
+            app:layout_constraintStart_toEndOf="@+id/btnHomeIncGoal"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btnHomeDecGoal"
+            android:layout_width="70dp"
+            android:layout_height="wrap_content"
+            android:background="@drawable/red_button_background"
+            android:text="@string/goalMinus"
+            android:textColor="@color/tanAccent"
+            android:textSize="24sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/clAway"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvAwayteam">
+
+        <TextView
+            android:id="@+id/tvAwayScore"
+            android:layout_width="70dp"
+            android:layout_height="0dp"
+            android:layout_marginStart="8dp"
+            android:background="@drawable/score_background"
+            android:text="0"
+            android:textAlignment="center"
+            android:textColor="@color/greenAccent"
+            android:textSize="24sp"
+            app:layout_constraintBottom_toBottomOf="@+id/btnAwayDecGoal"
+            app:layout_constraintStart_toEndOf="@+id/btnAwayDecGoal"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btnAwayIncGoal"
+            android:layout_width="70dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:background="@drawable/green_button_background"
+            android:text="@string/goalPlus"
+            android:textColor="@color/tanAccent"
+            android:textSize="24sp"
+            app:layout_constraintStart_toEndOf="@+id/tvAwayScore"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btnAwayAddGoal"
+            android:layout_width="70dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:background="@drawable/addgoal_button_background"
+            android:text="@string/goalAdd"
+            android:textColor="@color/tanAccent"
+            android:textSize="24sp"
+            app:layout_constraintStart_toEndOf="@+id/btnAwayIncGoal"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btnAwayDecGoal"
+            android:layout_width="70dp"
+            android:layout_height="wrap_content"
+            android:background="@drawable/red_button_background"
+            android:text="@string/goalMinus"
+            android:textColor="@color/tanAccent"
+            android:textSize="24sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

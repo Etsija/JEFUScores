@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">JEFUScores, © Jyrki Keisala, 2021</string>
+    <string name="tab_text_1">Asetukset</string>
+    <string name="tab_text_2">Peli</string>
+    <string name="tab_text_3">Pelilokit</string>
+    <string name="tab_text_4">Mail</string>
+    <string name="startGame">ALOITA</string>
+    <string name="endGame">LOPETA</string>
+    <string name="goalPlus">+</string>
+    <string name="goalMinus">-</string>
+    <string name="goalAdd">L</string>
+</resources>

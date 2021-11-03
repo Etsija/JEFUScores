@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/fragment2_background">
+
+    <TextView
+        android:id="@+id/tvLaheta"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:text="Lähetä tulokset osoitteisiin:"
+        android:textColor="#F44336"
+        android:textSize="20sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/etEmail1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:textSize="20sp"
+        android:ems="16"
+        android:inputType="textEmailAddress"
+        app:layout_constraintStart_toStartOf="@+id/tvLaheta"
+        app:layout_constraintTop_toBottomOf="@+id/tvLaheta" />
+
+    <EditText
+        android:id="@+id/etEmail2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:textSize="20sp"
+        android:ems="16"
+        android:inputType="textEmailAddress"
+        app:layout_constraintStart_toStartOf="@+id/etEmail1"
+        app:layout_constraintTop_toBottomOf="@+id/etEmail1" />
+
+    <EditText
+        android:id="@+id/etEmail3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:textSize="20sp"
+        android:ems="16"
+        android:inputType="textEmailAddress"
+        app:layout_constraintStart_toStartOf="@+id/etEmail2"
+        app:layout_constraintTop_toBottomOf="@+id/etEmail2" />
+
+    <EditText
+        android:id="@+id/etEmail4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:textSize="20sp"
+        android:ems="16"
+        android:inputType="textEmailAddress"
+        app:layout_constraintStart_toStartOf="@+id/etEmail3"
+        app:layout_constraintTop_toBottomOf="@+id/etEmail3" />
+
+    <EditText
+        android:id="@+id/etEmail5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:textSize="20sp"
+        android:ems="16"
+        android:inputType="textEmailAddress"
+        app:layout_constraintStart_toStartOf="@+id/etEmail4"
+        app:layout_constraintTop_toBottomOf="@+id/etEmail4" />
+
+    <Button
+        android:id="@+id/btnSend"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:text="LÄHETÄ"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/etEmail5" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
