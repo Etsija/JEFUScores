@@ -130,6 +130,10 @@ public class FragmentGame extends Fragment {
                 enableBtn(btnStopGame);
                 enableBtn(btnHomeIncGoal);
                 enableBtn(btnAwayIncGoal);
+                resetTable(tlHome);
+                resetTable(tlAway);
+                initTable(tlHome, "K: " + app.getHometeam().getName());
+                initTable(tlAway, "V: " + app.getAwayteam().getName());
                 startTime = tcTime.getText().toString();
                 addLog(startTime, "Peli alkoi");
 
