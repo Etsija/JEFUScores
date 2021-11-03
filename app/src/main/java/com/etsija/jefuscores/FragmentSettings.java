@@ -19,7 +19,7 @@ import androidx.fragment.app.Fragment;
 public class FragmentSettings extends Fragment {
 
     JEFUScores app;
-    private static final String TAG = "SettingsFragment";
+    private static final String TAG = "FragmentSettings";
     private EditText etHometeam, etAwayteam, etGoal, etGoalAdd, etEmail, etPassword;
     private Button btnSave;
 
@@ -57,8 +57,6 @@ public class FragmentSettings extends Fragment {
     @Override
     public void onResume() {
         super.onResume();
-
-        Log.d(TAG, "onResume()");
 
         // Listen to changes in the settings EditText fields
         // and save the changed values to global variables
@@ -183,7 +181,5 @@ public class FragmentSettings extends Fragment {
     @Override
     public void onPause() {
         super.onPause();
-
-        Log.d(TAG, "onPause()");
     }
 }

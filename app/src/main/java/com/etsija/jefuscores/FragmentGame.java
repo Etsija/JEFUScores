@@ -63,8 +63,6 @@ public class FragmentGame extends Fragment {
     public void onViewCreated(View view, Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
-        Log.d(TAG, "onViewCreated()");
-
         // Get access to global variables
         app = (JEFUScores) getActivity().getApplication();
 
@@ -309,8 +307,6 @@ public class FragmentGame extends Fragment {
     public void onResume() {
         super.onResume();
         if (wasRunning) running = true;
-
-        Log.d(TAG, "onResume()");
     }
 
     // Helper methods
@@ -356,9 +352,7 @@ public class FragmentGame extends Fragment {
     void addLog(String timestamp, String event) {
         List<String> strList = app.getGameLog();
         String str = timestamp + "  " + event;
-
         strList.add(str);
-        Log.d(TAG, strList.toString());
     }
 
     // Remove the last (newest) event from the game log (in case of mistype of goal)

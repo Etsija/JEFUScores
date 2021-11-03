@@ -81,8 +81,6 @@ public class FragmentEmail extends Fragment {
     public void onResume() {
         super.onResume();
 
-        Log.d(TAG, "onResume()");
-
         // Listen to changes in the settings EditText fields
         // and save the changed values to global variables
         etEmail1.addTextChangedListener(new TextWatcher() {
@@ -158,8 +156,6 @@ public class FragmentEmail extends Fragment {
     }
 
     protected void sendMail(String[] to, String subject, String body) {
-
-        Log.d(TAG, "Send mail");
 
         Intent emailIntent = new Intent(Intent.ACTION_SENDTO);
 

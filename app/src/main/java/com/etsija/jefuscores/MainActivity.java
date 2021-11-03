@@ -70,7 +70,6 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onResume() {
         super.onResume();
-        Log.d(TAG, "onResume()");
 
         SharedPreferences sp = this.getPreferences(Context.MODE_PRIVATE);
         app.setHometeam(new Team(Type.HOME, sp.getString("Hometeam", "")));

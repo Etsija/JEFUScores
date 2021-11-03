@@ -56,16 +56,14 @@ public class GamelogAdapter extends RecyclerView.Adapter<GamelogAdapter.GamelogH
                 if (isSelected == FALSE) {
                     view.setBackgroundColor(Color.parseColor("#567845"));
                     emailGamelogs.add(currentGamelog);
-                    //app.setEmailLogs(createGamelog(emailGamelogs));
                     isSelected = TRUE;
                 } else {
                     view.setBackgroundColor(Color.parseColor("#3f3f3f"));
                     emailGamelogs.remove(currentGamelog);
-                    //app.setEmailLogs(createGamelog(emailGamelogs));
                     isSelected = FALSE;
                 }
                 String body = createGamelog(emailGamelogs);
-                body = body + "\n---";
+                body = body + "---";
                 body = body + "\nJEFUScores for Android";
                 body = body + "\n© Jyrki Keisala, 2021";
                 Log.d(TAG, body);
