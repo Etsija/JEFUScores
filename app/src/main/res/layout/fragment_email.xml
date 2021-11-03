@@ -26,6 +26,8 @@
         android:textSize="20sp"
         android:ems="16"
         android:inputType="textEmailAddress"
+        android:hint="Email-osoite"
+        android:backgroundTint="@android:color/white"
         app:layout_constraintStart_toStartOf="@+id/tvLaheta"
         app:layout_constraintTop_toBottomOf="@+id/tvLaheta" />
 
@@ -37,6 +39,8 @@
         android:textSize="20sp"
         android:ems="16"
         android:inputType="textEmailAddress"
+        android:hint="Email-osoite"
+        android:backgroundTint="@android:color/white"
         app:layout_constraintStart_toStartOf="@+id/etEmail1"
         app:layout_constraintTop_toBottomOf="@+id/etEmail1" />
 
@@ -48,6 +52,8 @@
         android:textSize="20sp"
         android:ems="16"
         android:inputType="textEmailAddress"
+        android:hint="Email-osoite"
+        android:backgroundTint="@android:color/white"
         app:layout_constraintStart_toStartOf="@+id/etEmail2"
         app:layout_constraintTop_toBottomOf="@+id/etEmail2" />
 
@@ -59,6 +65,8 @@
         android:textSize="20sp"
         android:ems="16"
         android:inputType="textEmailAddress"
+        android:hint="Email-osoite"
+        android:backgroundTint="@android:color/white"
         app:layout_constraintStart_toStartOf="@+id/etEmail3"
         app:layout_constraintTop_toBottomOf="@+id/etEmail3" />
 
@@ -70,6 +78,8 @@
         android:textSize="20sp"
         android:ems="16"
         android:inputType="textEmailAddress"
+        android:hint="Email-osoite"
+        android:backgroundTint="@android:color/white"
         app:layout_constraintStart_toStartOf="@+id/etEmail4"
         app:layout_constraintTop_toBottomOf="@+id/etEmail4" />
 
