@@ -66,7 +66,6 @@ public class GamelogAdapter extends RecyclerView.Adapter<GamelogAdapter.GamelogH
                 body = body + "---";
                 body = body + "\nJEFUScores for Android";
                 body = body + "\n© Jyrki Keisala, 2021";
-                Log.d(TAG, body);
                 app.setEmailLogs(body);
             }
         });

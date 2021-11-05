@@ -26,6 +26,8 @@
         android:textSize="20sp"
         android:ems="16"
         android:inputType="textPersonName"
+        android:hint="Syötä kotijoukkue"
+        android:backgroundTint="@android:color/white"
         app:layout_constraintStart_toStartOf="@+id/gamelog_hometeam"
         app:layout_constraintTop_toBottomOf="@+id/gamelog_hometeam" />
 
@@ -48,6 +50,8 @@
         android:textSize="20sp"
         android:ems="16"
         android:inputType="textPersonName"
+        android:hint="Syötä vierasjoukkue"
+        android:backgroundTint="@android:color/white"
         app:layout_constraintStart_toStartOf="@+id/tvAwayteam"
         app:layout_constraintTop_toBottomOf="@+id/tvAwayteam" />
 
@@ -70,6 +74,7 @@
         android:textSize="20sp"
         android:ems="2"
         android:inputType="number"
+        android:backgroundTint="@android:color/white"
         app:layout_constraintBottom_toBottomOf="@+id/tvGoal1"
         app:layout_constraintStart_toEndOf="@+id/tvGoal1" />
 
@@ -103,6 +108,7 @@
         android:textSize="20sp"
         android:ems="2"
         android:inputType="number"
+        android:backgroundTint="@android:color/white"
         app:layout_constraintBottom_toBottomOf="@+id/tvGoalAdd1"
         app:layout_constraintStart_toEndOf="@+id/tvGoalAdd1" />
 
@@ -135,6 +141,8 @@
         android:textSize="20sp"
         android:ems="16"
         android:inputType="textEmailAddress"
+        android:hint="Syötä oma email-osoitteesi"
+        android:backgroundTint="@android:color/white"
         app:layout_constraintStart_toStartOf="@+id/tvEmail"
         app:layout_constraintTop_toBottomOf="@+id/tvEmail" />
 
@@ -156,6 +164,8 @@
         android:textSize="20sp"
         android:ems="16"
         android:inputType="textPassword"
+        android:hint="Sähköpostisi salasana"
+        android:backgroundTint="@android:color/white"
         app:layout_constraintStart_toStartOf="@+id/tvPassword"
         app:layout_constraintTop_toBottomOf="@+id/tvPassword" />
 

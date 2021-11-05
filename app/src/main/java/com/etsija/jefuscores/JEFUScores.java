@@ -18,7 +18,6 @@ public class JEFUScores extends Application {
     private String email5 = "";
     private int homeScore = 0;
     private int awayScore = 0;
-    List<String> gameLog = new ArrayList<String>();
     private String emailLogs = "JEFUScores for Android";
 
     // Getters and setters for the application global variables
@@ -90,10 +89,6 @@ public class JEFUScores extends Application {
     public int getAwayScore() { return awayScore; }
 
     public void setAwayScore(int awayScore) { this.awayScore = awayScore; }
-
-    public List<String> getGameLog() { return gameLog; }
-
-    public void setGameLog(List<String> gameLog) { this.gameLog = gameLog; }
 
     public String getEmailLogs() {
         return emailLogs;

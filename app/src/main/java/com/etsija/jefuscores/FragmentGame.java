@@ -21,6 +21,7 @@ import com.etsija.jefuscores.db.Gamelog;
 import com.etsija.jefuscores.ui.main.GamelogViewModel;
 
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.List;
@@ -51,17 +52,19 @@ public class FragmentGame extends Fragment {
     private boolean running;
     private boolean wasRunning;
     private boolean reset;
+    List<String> gamelog = new ArrayList<>();
 
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        //return super.onCreateView(inflater, container, savedInstanceState);
         return inflater.inflate(R.layout.fragment_game, container, false);
     }
 
     @Override
     public void onViewCreated(View view, Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
+
+        Log.d(TAG, "onViewCreated");
 
         // Get access to global variables
         app = (JEFUScores) getActivity().getApplication();
@@ -144,7 +147,6 @@ public class FragmentGame extends Fragment {
         btnStopGame.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
                 // Ask the user before deleting a gamelog
                 AlertDialog.Builder builder = new AlertDialog.Builder(getContext());
                 builder.setTitle("Lopeta")
@@ -339,7 +341,8 @@ public class FragmentGame extends Fragment {
 
     // Reset the game log
     void resetScoreAndLog() {
-        app.getGameLog().clear();
+        //app.getGameLog().clear();
+        gamelog.clear();
         app.getHometeam().setGoals(0);
         app.getHometeam().setGoalsAdd(0);
         app.getAwayteam().setGoals(0);
@@ -350,24 +353,19 @@ public class FragmentGame extends Fragment {
 
     // Append new game event to the game log
     void addLog(String timestamp, String event) {
-        List<String> strList = app.getGameLog();
         String str = timestamp + "  " + event;
-        strList.add(str);
+        gamelog.add(str);
     }
 
     // Remove the last (newest) event from the game log (in case of mistype of goal)
     void removeLog() {
-        List<String> strList = app.getGameLog();
-
-        strList.remove(strList.size() - 1);
-        Log.d(TAG, strList.toString());
+        gamelog.remove(gamelog.size() - 1);
     }
 
     // Convert the game log to multiline string
     String convertGamelog() {
         String body = "";
-        List<String> gameLog = app.getGameLog();
-        for (String event : gameLog) {
+        for (String event : gamelog) {
             body = body + event + "\n";
         }
         return body;
@@ -443,11 +441,12 @@ public class FragmentGame extends Fragment {
 
     // Clear the scoretable
     public void resetTable(TableLayout tl) {
-        int count = tl.getChildCount();
-        for (int i = 0; i < count; i++) {
-            View child = tl.getChildAt(i);
-            if (child instanceof TableRow) ((ViewGroup) child).removeAllViews();
-        }
+        //int count = tl.getChildCount();
+        //for (int i = 0; i < count; i++) {
+        //    View child = tl.getChildAt(i);
+        //    if (child instanceof TableRow) ((ViewGroup) child).removeAllViews();
+        //}
+        tl.removeAllViews();
     }
 
     // Initialise the scoretable
@@ -459,9 +458,8 @@ public class FragmentGame extends Fragment {
         TableLayout.LayoutParams lp =
                 new TableLayout.LayoutParams(TableLayout.LayoutParams.MATCH_PARENT,
                     TableLayout.LayoutParams.MATCH_PARENT);
-        lp.setMargins(20, 10, 20, 10);
+        lp.setMargins(20, 5, 20, 5);
         row0.setLayoutParams(lp);
-
         tv0.setText(strTeam);
         tv0.setTextColor(Color.parseColor("#F44336"));
         row0.addView(tv0);
