@@ -33,7 +33,7 @@
             android:textStyle="bold" />
 
         <TextView
-            android:id="@+id/gamelog_hometeam"
+            android:id="@+id/tvHometeam"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@id/gamelog_date"
@@ -46,7 +46,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@id/gamelog_date"
-            android:layout_toEndOf="@id/gamelog_hometeam"
+            android:layout_toEndOf="@id/tvHometeam"
             android:padding="3dp"
             android:text="67"
             android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
@@ -85,7 +85,7 @@
             android:id="@+id/gamelog_events"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@id/gamelog_hometeam"
+            android:layout_below="@id/tvHometeam"
             android:padding="3dp"
             android:text="Game events"
             android:textColor="@color/teal_200"

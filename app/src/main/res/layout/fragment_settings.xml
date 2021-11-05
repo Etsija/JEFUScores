@@ -7,7 +7,7 @@
     android:background="@drawable/fragment2_background">
 
     <TextView
-        android:id="@+id/gamelog_hometeam"
+        android:id="@+id/tvHometeam"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
@@ -28,8 +28,8 @@
         android:inputType="textPersonName"
         android:hint="Syötä kotijoukkue"
         android:backgroundTint="@android:color/white"
-        app:layout_constraintStart_toStartOf="@+id/gamelog_hometeam"
-        app:layout_constraintTop_toBottomOf="@+id/gamelog_hometeam" />
+        app:layout_constraintStart_toStartOf="@+id/tvHometeam"
+        app:layout_constraintTop_toBottomOf="@+id/tvHometeam" />
 
     <TextView
         android:id="@+id/tvAwayteam"

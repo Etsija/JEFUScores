@@ -1,7 +1,6 @@
 package com.etsija.jefuscores.ui.main;
 
 import android.graphics.Color;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -99,7 +98,7 @@ public class GamelogAdapter extends RecyclerView.Adapter<GamelogAdapter.GamelogH
             super(itemView);
             tvDate = itemView.findViewById(R.id.gamelog_date);
             tvTime = itemView.findViewById(R.id.gamelog_time);
-            tvHometeam = itemView.findViewById(R.id.gamelog_hometeam);
+            tvHometeam = itemView.findViewById(R.id.tvHometeam);
             tvAwayteam = itemView.findViewById(R.id.gamelog_awayteam);
             tvHomescore = itemView.findViewById(R.id.gamelog_homescore);
             tvAwayscore = itemView.findViewById(R.id.gamelog_awayscore);

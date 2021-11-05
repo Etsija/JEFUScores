@@ -40,6 +40,7 @@ public class FragmentGame extends Fragment {
     JEFUScores app;
     private static final String TAG = "FragmentGame";
     private TextView tvHometeam, tvAwayteam, tvGametime, tvHomeScore, tvAwayScore;
+    private TextView tvHometeamEvents, tvAwayteamEvents;
     private TextClock tcTime;
     private String startTime;
     private Button btnStartGame, btnStopGame;
@@ -82,11 +83,13 @@ public class FragmentGame extends Fragment {
 
         // Find the needed elements from the layout
         tcTime = view.findViewById(R.id.tcTime);
-        tvHometeam = view.findViewById(R.id.gamelog_hometeam);
+        tvHometeam = view.findViewById(R.id.tvHometeam);
         tvAwayteam = view.findViewById(R.id.tvAwayteam);
         tvGametime = view.findViewById(R.id.tvGameTime);
         tvHomeScore = view.findViewById(R.id.tvHomeScore);
         tvAwayScore = view.findViewById(R.id.tvAwayScore);
+        tvHometeamEvents = view.findViewById(R.id.tvHometeamEvents);
+        tvAwayteamEvents = view.findViewById(R.id.tvAwayteamEvents);
         btnStartGame = view.findViewById(R.id.btnStartGame);
         btnStopGame = view.findViewById(R.id.btnStopGame);
         btnHomeDecGoal = view.findViewById(R.id.btnHomeDecGoal);
@@ -101,8 +104,8 @@ public class FragmentGame extends Fragment {
         // Reset and initialise score tables
         resetTable(tlHome);
         resetTable(tlAway);
-        initTable(tlHome, "K: " + app.getHometeam().getName());
-        initTable(tlAway, "V: " + app.getAwayteam().getName());
+        //initTable(tlHome, "K: " + app.getHometeam().getName());
+        //initTable(tlAway, "V: " + app.getAwayteam().getName());
 
         // Initialise button states
 
@@ -133,8 +136,6 @@ public class FragmentGame extends Fragment {
                 enableBtn(btnAwayIncGoal);
                 resetTable(tlHome);
                 resetTable(tlAway);
-                initTable(tlHome, "K: " + app.getHometeam().getName());
-                initTable(tlAway, "V: " + app.getAwayteam().getName());
                 startTime = tcTime.getText().toString();
                 addLog(startTime, "Peli alkoi");
 
@@ -159,8 +160,6 @@ public class FragmentGame extends Fragment {
                                 Toast.makeText(getContext(), "Peli päättyi", Toast.LENGTH_SHORT).show();
                                 resetTable(tlHome);
                                 resetTable(tlAway);
-                                initTable(tlHome, "K: " + app.getHometeam().getName());
-                                initTable(tlAway, "V: " + app.getAwayteam().getName());
                                 enableBtn(btnStartGame);
                                 disableBtn(btnStopGame);
                                 disableBtn(btnHomeDecGoal);
@@ -300,6 +299,8 @@ public class FragmentGame extends Fragment {
             Log.d(TAG, "is visible");
             tvHometeam.setText(app.getHometeam().getName());
             tvAwayteam.setText(app.getAwayteam().getName());
+            tvHometeamEvents.setText("K: " + app.getHometeam().getName());
+            tvAwayteamEvents.setText("V: " + app.getAwayteam().getName());
         } else {
             Log.d(TAG, "not longer visible");
         }
@@ -441,34 +442,11 @@ public class FragmentGame extends Fragment {
 
     // Clear the scoretable
     public void resetTable(TableLayout tl) {
-        //int count = tl.getChildCount();
-        //for (int i = 0; i < count; i++) {
-        //    View child = tl.getChildAt(i);
-        //    if (child instanceof TableRow) ((ViewGroup) child).removeAllViews();
-        //}
         tl.removeAllViews();
-    }
-
-    // Initialise the scoretable
-    public void initTable(TableLayout tl, String strTeam) {
-
-        TableRow row0 = new TableRow(getActivity());
-        TextView tv0 = new TextView(getActivity());
-
-        TableLayout.LayoutParams lp =
-                new TableLayout.LayoutParams(TableLayout.LayoutParams.MATCH_PARENT,
-                    TableLayout.LayoutParams.MATCH_PARENT);
-        lp.setMargins(20, 5, 20, 5);
-        row0.setLayoutParams(lp);
-        tv0.setText(strTeam);
-        tv0.setTextColor(Color.parseColor("#F44336"));
-        row0.addView(tv0);
-        tl.addView(row0, lp);
     }
 
     // Update the scoretable
     public void updateTable(TableLayout tl, String timestamp, String type) {
-
         int rows = tl.getChildCount();
         TableRow row = new TableRow(getActivity());
 
@@ -476,7 +454,7 @@ public class FragmentGame extends Fragment {
             case "incGoal":
                 TextView tv1 = new TextView(getActivity());
                 TextView tv2 = new TextView(getActivity());
-                tv1.setText("   " + timestamp);
+                tv1.setText("   " + timestamp + "   ");
                 tv1.setTextColor(getResources().getColor(R.color.tanAccent));
                 tv1.setTextSize(10);
                 row.addView(tv1);

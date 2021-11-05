@@ -37,19 +37,19 @@
         android:layout_width="172dp"
         android:layout_height="0dp"
         android:layout_marginBottom="8dp"
-        android:layout_marginTop="8dp"
         android:background="@drawable/score_background"
         android:scrollbars="none"
         app:layout_constraintBottom_toTopOf="@+id/btnStopGame"
         app:layout_constraintEnd_toStartOf="@+id/svAway"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/clAway">
+        app:layout_constraintTop_toBottomOf="@+id/tvHometeamEvents">
 
         <TableLayout
             android:id="@+id/tlHome"
-            android:layout_width="fill_parent"
-            android:layout_height="fill_parent"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
             android:isScrollContainer="true" />
 
     </ScrollView>
@@ -59,25 +59,25 @@
         android:layout_width="172dp"
         android:layout_height="0dp"
         android:layout_marginBottom="8dp"
-        android:layout_marginTop="8dp"
         android:background="@drawable/score_background"
         android:scrollbars="none"
         app:layout_constraintBottom_toTopOf="@+id/btnStopGame"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/svHome"
-        app:layout_constraintTop_toBottomOf="@+id/clAway">
+        app:layout_constraintTop_toBottomOf="@+id/tvAwayteamEvents">
 
         <TableLayout
             android:id="@+id/tlAway"
-            android:layout_width="fill_parent"
-            android:layout_height="fill_parent"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
             android:isScrollContainer="true" />
 
     </ScrollView>
 
     <TextView
-        android:id="@+id/gamelog_hometeam"
+        android:id="@+id/tvHometeam"
         android:layout_width="195dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
@@ -138,7 +138,7 @@
         android:layout_marginTop="8dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/gamelog_hometeam">
+        app:layout_constraintTop_toBottomOf="@+id/tvHometeam">
 
         <TextView
             android:id="@+id/tvHomeScore"
@@ -250,5 +250,29 @@
             app:layout_constraintTop_toTopOf="parent" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <TextView
+        android:id="@+id/tvHometeamEvents"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="4dp"
+        android:layout_marginTop="8dp"
+        android:text="K: Kotijoukkue"
+        android:textColor="#F44336"
+        app:layout_constraintBottom_toTopOf="@+id/svHome"
+        app:layout_constraintStart_toStartOf="@+id/svHome"
+        app:layout_constraintTop_toBottomOf="@+id/clAway" />
+
+    <TextView
+        android:id="@+id/tvAwayteamEvents"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="4dp"
+        android:layout_marginTop="8dp"
+        android:text="V: Vierasjoukkue"
+        android:textColor="#F44336"
+        app:layout_constraintBottom_toTopOf="@+id/svAway"
+        app:layout_constraintStart_toStartOf="@+id/svAway"
+        app:layout_constraintTop_toBottomOf="@+id/clAway" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
